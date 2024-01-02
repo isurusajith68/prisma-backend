@@ -1,10 +1,11 @@
-const prisma = require('@prisma/client')
-
+const prisma = require('../prisma/index');
 const jwt = require('jsonwebtoken');
 
 const isLoggedIn = async (req, res, next) => {
     try {
-        const token = req.cookies.token;
+        const token = req.cookies.jwt;
+
+        console.log(token)
 
         if (!token) {
             res.send('Not authorized');

@@ -18,7 +18,10 @@ app.get('/', (req, res) => {
 
 //user routes
 const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes');
+const { post } = require('./prisma');
 app.use('/api', userRoutes);
+app.use('/api', postRoutes);
 
 
 app.listen(3000, () => {

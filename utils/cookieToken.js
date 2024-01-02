@@ -9,7 +9,6 @@ const cookieToken = (user, res) => {
     user.password = undefined
     res.status(200).cookie('jwt', token, options).json({
         status: true,
-        token,
         user
     })
 

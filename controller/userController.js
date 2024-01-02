@@ -61,7 +61,7 @@ exports.login = async (req, res, next) => {
 //logout user
 exports.logout = async (req, res, next) => {
     try {
-        res.clearCookie('token');
+        res.clearCookie('jwt');
 
         res.status(200).json({
             success: true,
